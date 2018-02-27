@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<java path="java/android-immersive/src" if="android" />
+	<android extension="org.haxe.extension.AndroidImmersiveLowProfile"
+		if="IMMERSIVE_LOW_PROFILE" />
+	<android extension="org.haxe.extension.AndroidImmersiveStatusColorBar"
+		if="IMMERSIVE_COLOR_BAR" />
+	<android extension="org.haxe.extension.AndroidImmersiveFull"
+		if="IMMERSIVE_FULL" />
+	<android extension="org.haxe.extension.AndroidImmersiveFull"
+		unless="IMMERSIVE_FULL || IMMERSIVE_COLOR_BAR || IMMERSIVE_LOW_PROFILE" />
+
+</project>
