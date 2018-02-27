@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- NMML reference: https://gist.github.com/1763850 -->
+	
+	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
+	<meta title="UniversalInputSample" package="ru.ydvp.UniversalInputSample" version="1.0.0" company="... vikingx84" />
+	
+	<!-- output -->
+	<app main="Main" file="UniversalInputSample" path="bin" />
+	
+	<window background="#000000" fps="60" />
+	<window width="480" height="800" unless="mobile" />
+	<window orientation="portrait" vsync="false" antialiasing="0" if="cpp" />
+	
+	<section if="android">
+		<set name="IMMERSIVE_FULL" />
+		<set name="IMMERSIVE_LOW_PROFILE" />
+		<set name="IMMERSIVE_COLOR_BAR" />
+	</section>
+	
+	<!-- classpath, haxe libs -->
+	<source path="src" />
+	<haxelib name="openfl" />
+	<haxelib name="actuate" />
+	
+	<include path="../extension-android-immersive" />
+	<include path="../nativetext" />
+	<include path="../mobiledisplay" />
+	<include path="../extensionkit" />
+	
+	<!-- assets -->
+	<icon path="assets/openfl.svg" />
+	<assets path="assets/img" rename="img" />
+	<assets path="assets/fonts" rename="fonts" include="*.ttf"/>
+	<!-- optimize output
+	<haxeflag name="-dce full" /> -->
+	
+</project>
